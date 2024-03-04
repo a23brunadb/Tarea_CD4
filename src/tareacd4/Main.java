@@ -9,6 +9,10 @@ public class Main {
         operativa_cuenta();
     }
 
+    /*
+    Muestra los distintos tipos de mensajes que se enseñan a la hora de mostrar el saldo disponible,
+    al retirar tinero y cuando ocurre un fallo al darse alguna de las excepciones
+    */
     public static void operativa_cuenta() {
         CtaCorriente miCuenta;
         double saldoActual;

@@ -1,5 +1,8 @@
 package banco;
 
+/*
+@author Bruna Da Silva
+*/
 public class CtaCorriente {
     private String nombre;
     private String cuenta;
@@ -72,6 +75,11 @@ public class CtaCorriente {
         this.saldocuenta = saldo;
         this.interes = interes;
     }
+    
+    /*
+    @exception si la cantidad es menor que 0
+    @throws mensaje de "No se puede ingresar una cantidad negativa"
+    */
     public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
@@ -79,6 +87,13 @@ public class CtaCorriente {
         setSaldocuenta(getSaldocuenta() + cantidad);
     }
 
+    /*
+    @exception si la cantidad es menor o igual que 0
+    @throws mensaje de "No se puede retirar una cantiadd negativa"
+    
+    @exception si el saldo de la cuenta es menor que la cantidad que se intenta retirar
+    @throws mensaje de "No hay suficiente saldo"
+    */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
