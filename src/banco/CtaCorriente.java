@@ -1,7 +1,7 @@
 package banco;
 
-/*
-@author Bruna Da Silva
+/**
+@author Bruna
 */
 public class CtaCorriente {
     private String nombre;
@@ -10,6 +10,8 @@ public class CtaCorriente {
     private double interes;
 
     /**
+     * obtiene nombre asociado a la cuenta
+     * 
      * @return the nombre
      */
     public String getNombre() {
@@ -17,6 +19,8 @@ public class CtaCorriente {
     }
 
     /**
+     * establece el nombre asociado a la cuenta
+     * 
      * @param nombre the nombre to set
      */
     public void setNombre(String nombre) {
@@ -24,6 +28,8 @@ public class CtaCorriente {
     }
 
     /**
+     * obtiene la cuenta
+     * 
      * @return the cuenta
      */
     public String getCuenta() {
@@ -31,6 +37,8 @@ public class CtaCorriente {
     }
 
     /**
+     * establece la cuenta
+     * 
      * @param cuenta the cuenta to set
      */
     public void setCuenta(String cuenta) {
@@ -38,6 +46,8 @@ public class CtaCorriente {
     }
 
     /**
+     * obtiene el saldo de la cuenta
+     * 
      * @return the saldocuenta
      */
     public double getSaldocuenta() {
@@ -45,6 +55,8 @@ public class CtaCorriente {
     }
 
     /**
+     * establece el saldo de la cuenta
+     * 
      * @param saldocuenta the saldocuenta to set
      */
     public void setSaldocuenta(double saldocuenta) {
@@ -52,6 +64,8 @@ public class CtaCorriente {
     }
 
     /**
+     * obtiene el interés de la cuenta
+     * 
      * @return the interes
      */
     public double getInteres() {
@@ -59,12 +73,20 @@ public class CtaCorriente {
     }
 
     /**
+     * establece el interés de la cuenta
+     * 
      * @param interes the interes to set
      */
     public void setInteres(double interes) {
         this.interes = interes;
     }
 
+    /**
+     * @param nombre nombre asociado a la cuenta
+     * @param cuenta la cuenta
+     * @param saldocuenta el saldo de la cuenta
+     * @param interes el interés asociado a la cuenta
+     */
     public CtaCorriente()
     {
     }
@@ -76,9 +98,10 @@ public class CtaCorriente {
         this.interes = interes;
     }
     
-    /*
-    @exception si la cantidad es menor que 0
-    @throws mensaje de "No se puede ingresar una cantidad negativa"
+    /**
+     * ingresar dinero en cuenta
+     * 
+     * @throws Exception si la cantidad es menor que 0
     */
     public void ingresar(double cantidad) throws Exception
     {
@@ -87,12 +110,10 @@ public class CtaCorriente {
         setSaldocuenta(getSaldocuenta() + cantidad);
     }
 
-    /*
-    @exception si la cantidad es menor o igual que 0
-    @throws mensaje de "No se puede retirar una cantiadd negativa"
-    
-    @exception si el saldo de la cuenta es menor que la cantidad que se intenta retirar
-    @throws mensaje de "No hay suficiente saldo"
+    /**
+     * retirar dinero de la cuenta
+     * 
+     * @throws Exception si la cantidad es menor o igual que 0 o si no hay suficiente saldo en la cuenta
     */
     public void retirar(double cantidad) throws Exception
     {
